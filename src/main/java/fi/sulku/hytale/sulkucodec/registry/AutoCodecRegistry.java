@@ -12,6 +12,7 @@ import com.hypixel.hytale.codec.util.RawJsonReader;
 import com.hypixel.hytale.codec.validation.Validator;
 import com.hypixel.hytale.codec.validation.validator.NonNullValidator;
 import fi.sulku.hytale.sulkucodec.annotations.CodecConfig;
+import org.bson.BsonValue;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 import java.io.IOException;
@@ -247,7 +248,7 @@ public final class AutoCodecRegistry {
         }
 
         @Override
-        public org.bson.BsonValue encode(List<E> list, ExtraInfo extraInfo) {
+        public BsonValue encode(List<E> list, ExtraInfo extraInfo) {
             if (list == null) return org.bson.BsonNull.VALUE;
             E[] array = list.toArray((E[]) Array.newInstance(componentType, 0));
             return arrayCodec.encode(array, extraInfo);

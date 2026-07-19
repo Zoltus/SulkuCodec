@@ -6,7 +6,7 @@ plugins {
 group = "fi.sulku.hytale"
 version = "1.0-SNAPSHOT"
 
-val hytaleVersion = "0.6.0-pre.3"
+val hytaleVersion = "0.6.0-pre.8"
 
 repositories {
     mavenCentral()
